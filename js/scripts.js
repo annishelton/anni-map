@@ -1,11 +1,12 @@
-var defaultCenter = [40.713435,-73.971291];
-var defaultZoom = 12;
+var map = L.map('anni-map').setView([51.505, -0.09], 13);
 
-var map = L.map('anni-map').setView(defaultCenter, defaultZoom);
-
-L.tileLayer('https://a.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png', {
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
 
 var beerData = [
   {
