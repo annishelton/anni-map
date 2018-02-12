@@ -1,12 +1,10 @@
-var map = L.map('anni-map').setView([51.505, -0.09], 13);
+var map = L.map('anni-map').setView([40.673804, -73.999081], 12);
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
 }).addTo(map);
-
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
 
 var beerData = [
   {
@@ -63,29 +61,29 @@ var beerData = [
     known_for: 'Buy by the Bottle',
     lat: 40.71841,
     lon: -73.989931,
-    type: 'Tap Room',
+    type: 'Taproom',
   },
   {
     name: "Fool's Gold",
     known_for: 'Huge Selection',
     lat: 40.723087,
     lon: -73.989781,
-    type: 'Tap Room',
+    type: 'Taproom',
   },
   {
     name: "Berg'n",
     known_for: 'Food Carts!',
     lat: 40.677246,
     lon: -73.957193,
-    type: 'Tap Room',
+    type: 'Taproom',
   },
   {
     name: "Blind Tiger",
     known_for: 'Huge Selection',
     lat: 40.731852,
     lon: -74.003243,
-    type: 'Tap Room',
-  },
+    type: 'Taproom',
+  }]
 
 // how to add a single marker using L.marker()
 // var chrisPizza = pizzaData[0];
@@ -117,7 +115,7 @@ beerData.forEach(function(beerObject) {
   };
 
   var marker = L.circleMarker(latLon, options)
-      .bindPopup(beerObject.name {offset: [0, -6]})
+      .bindPopup(beerObject.name, {offset: [0, -6]})
       .addTo(map)
   // add the marker to the markersArray
   markersArray.push(marker);
