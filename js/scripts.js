@@ -1,4 +1,4 @@
-var map = L.map('anni-map').setView([40.673804, -73.999081], 11);
+var map = L.map('anni-map').setView([40.673804, -73.999081], 12);
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
@@ -8,64 +8,64 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}
 
 var beerData = [
   {
-    name: 'Other Half',
-    known_for: 'Double IPAs',
+    name: 'Other Half Brewing',
+    known_for: 'Double IPAs and crazy Stouts',
     lat: 40.673804,
     lon: -73.999081,
     type: 'Brewery',
   },
   {
-    name: 'Greenpoint',
-    known_for: 'German Style',
+    name: 'Greenpoint Brewery',
+    known_for: 'German style beers',
     lat: 40.725056,
     lon: -73.957254,
     type: 'Brewery',
   },
   {
     name: 'Single Cut',
-    known_for: 'Clean ales',
+    known_for: 'clean tasting beers and boardgames',
     lat: 40.778192,
     lon: -73.901496,
     type: 'Brewery',
   },
   {
-    name: 'Coney Island',
-    known_for: 'Beachside, Weird',
+    name: 'Coney Island Brewery',
+    known_for: 'drinking beachside, and being weird',
     lat: 40.574953,
     lon: -73.983821,
     type: 'Brewery',
   },
   {
-    name: "Three's",
-    known_for: 'Good Variety',
+    name: "Three's Brewing",
+    known_for: 'a good variety of food and beers',
     lat: 40.679629,
     lon: -73.982246,
     type: 'Brewery',
   },
   {
     name: 'KCBC',
-    known_for: 'New ish',
+    known_for: 'sight-seeing Bushwick hipsters',
     lat: 40.706002,
     lon: -73.923591,
     type: 'Brewery',
   },
   {
-    name: 'Five Boroughs',
-    known_for: 'Near My House',
+    name: 'Five Boroughs Brewing Co.',
+    known_for: 'an adventure in Sunset Park',
     lat: 40.650511,
     lon: -74.014479,
     type: 'Brewery',
   },
   {
-    name: "Top Hops",
-    known_for: 'Buy by the Bottle',
+    name: "Top Hops Beer Shop",
+    known_for: 'buying by the bottle',
     lat: 40.71841,
     lon: -73.989931,
     type: 'Taproom',
   },
   {
     name: "Fool's Gold",
-    known_for: 'Huge Selection',
+    known_for: 'a huge selection of drafts',
     lat: 40.723087,
     lon: -73.989781,
     type: 'Taproom',
@@ -79,7 +79,7 @@ var beerData = [
   },
   {
     name: "Blind Tiger",
-    known_for: 'Huge Selection',
+    known_for: 'A classic near NYU',
     lat: 40.731852,
     lon: -74.003243,
     type: 'Taproom',
@@ -102,16 +102,16 @@ beerData.forEach(function(beerObject) {
 
   var beerColor = '#FFF';
 
-  if (beerObject.type === 'Brewery') beerColor = 'green';
-  if (beerObject.type === 'Taproom') beerColor = 'blue';
+  if (beerObject.type === 'Brewery') beerColor = '#9e10a8';
+  if (beerObject.type === 'Taproom') beerColor = '#3fe2d8';
 
   var options = {
-    radius: 6,
+    radius: 10,
     opacity: 1,
     fillColor: beerColor,
-    fillOpacity: 0.9,
-    color: '#FFF',
-    weight: 2,
+    fillOpacity: 0.5,
+    color: beerColor,
+    weight: 1,
   };
 
   var marker = L.circleMarker(latLon, options)
