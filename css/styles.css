@@ -534,6 +534,7 @@ button {
 	border-radius: 12px;
   font-family: cursive;
   font-weight: bolder;
+  font-size: large;
 	}
 .leaflet-popup-content {
 	margin: 13px 19px;
