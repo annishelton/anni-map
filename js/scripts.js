@@ -128,7 +128,6 @@ $('.fly-to-other-half').click(function(e) {
   e.stopPropagation();
 });
 
-
 $('.reset').click(function() {
   map.flyTo(defaultCenter, defaultZoom)
 });
