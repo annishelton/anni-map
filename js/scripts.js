@@ -120,3 +120,15 @@ beerData.forEach(function(beerObject) {
   // add the marker to the markersArray
   markersArray.push(marker);
 });
+
+$('.fly-to-other-half').click(function(e) {
+	var flytobar = L.map('anni-map').setView([40.673804,-73.999081,], 11);
+  map.setView(flytobar._latlng);
+  flytobar.openPopup();
+  e.stopPropagation();
+});
+
+
+$('.reset').click(function() {
+  map.flyTo(defaultCenter, defaultZoom)
+});
