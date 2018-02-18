@@ -1,4 +1,7 @@
-var map = L.map('anni-map').setView([40.673804, -73.999081], 11);
+var defaultCenter = [40.685594, -73.878838];
+var defaultZoom = 11;
+
+var map = L.map('anni-map').setView([40.685594, -73.878838], 11);
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
@@ -122,9 +125,45 @@ beerData.forEach(function(beerObject) {
 });
 
 $('.fly-to-other-half').click(function(e) {
-	var flytobar = L.map('anni-map').setView([40.673804,-73.999081,], 11);
-  map.setView(flytobar._latlng);
-  flytobar.openPopup();
+  map.setView([beerData[0].lat,beerData[0].lon],14);
+  var otherHalf = markersArray[0];
+  otherHalf.openPopup();
+  e.stopPropagation();
+});
+$('.fly-to-greenpoint').click(function(e) {
+  map.setView([beerData[1].lat,beerData[1].lon],14);
+  var greenpoint = markersArray[1];
+  greenpoint.openPopup();
+  e.stopPropagation();
+});
+$('.fly-to-single-cut').click(function(e) {
+  map.setView([beerData[2].lat,beerData[2].lon],14);
+  var singleCut = markersArray[2];
+  singleCut.openPopup();
+  e.stopPropagation();
+});
+$('.fly-to-coney-island').click(function(e) {
+  map.setView([beerData[3].lat,beerData[3].lon],14);
+  var coneyIsland = markersArray[3];
+  coneyIsland.openPopup();
+  e.stopPropagation();
+});
+$('.fly-to-threes').click(function(e) {
+  map.setView([beerData[4].lat,beerData[4].lon],14);
+  var threes = markersArray[4];
+  threes.openPopup();
+  e.stopPropagation();
+});
+$('.fly-to-kcbc').click(function(e) {
+  map.setView([beerData[5].lat,beerData[5].lon],14);
+  var kcbc = markersArray[5];
+  kcbc.openPopup();
+  e.stopPropagation();
+});
+$('.fly-to-five-boroughs').click(function(e) {
+  map.setView([beerData[6].lat,beerData[6].lon],14);
+  var fiveBoroughs = markersArray[6];
+  fiveBoroughs.openPopup();
   e.stopPropagation();
 });
 
